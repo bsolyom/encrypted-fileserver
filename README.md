@@ -1,5 +1,5 @@
 # encrypted-fileserver
-Simple web fileserver with file encryption written in Go
+Simple web fileserver with file encryption written in Go \
 Upload a file to the web server, then download it with the given code, with configurable expiration time (after which the files are deleted), maximum file size, etc. Enter a password for the uploaded files to encrypt them on the server (optional).
 In the [env](./env) file you can edit some variables, for example, set a cert for the server
 
