@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- <meta name="robots" content="noindex, nofollow, noarchive, noimageindex" /> -->
+		<title>Encrypted Fileserver</title>
+	</head>
+	<body>
+		<h1>FILESERVER</h1> 
+		<h3>Send files temporarily, encrypted on the server</h3>
+		<form action="/up" method="post" enctype="multipart/form-data">
+			<h3>Upload file</h3>
+			<h3>File: <input type="file" name="file" required></h3>
+			<h3>Password: <input type="password" name="psw"></h3>
+			<input type="submit" value="Upload">
+		</form>
+		<form action="/down" method="post">
+			<h3>Download file</h3>
+			<h3>Code: <input type="text" name="code" maxlength="6" required></h3>
+			<h3>Password: <input type="password" name="psw"></h3>
+			<input type="submit" value="Download">
+		</form>
+		<h3>Upload from CLI without encryption: <code>curl http://localhost:8080/up -F "file=@file"</code></h3> <!-- change the host -->
+		<h3>Download from CLI without encryption: <code>curl http://localhost:8080/down/code > path</code></h3>
+		<h3>Upload from CLI with encryption: <code>curl http://localhost:8080/up -F "file=@file" -F "psw=password"</code></h3>
+		<h3>Download from CLI with encryption: <code>curl http://localhost:8080/down -F "code=filecode" -F "psw=password" > path</code></h3>
+		<h3>File uploads and downloads also work with no password entered</h3>
+		<h3>Files expire after 3 days</h3>
+		<h3>File size limit is 50MB</h3>
+	</body>
+</html>
+<style>
+body, a {
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+</style>
+

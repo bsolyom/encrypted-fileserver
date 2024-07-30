@@ -1,0 +1,5 @@
+PORT=8080
+SIZELIMIT=50 # maximum file size per upload, in MBs
+EXPIRE=3 # files expire after the specified days
+CERTFILE=""
+KEYFILE=""
