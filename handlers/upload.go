@@ -40,9 +40,8 @@ func ReceiveFile(r *http.Request, w http.ResponseWriter) (string, error) {
 		return "", err
 	}
 	psw := r.FormValue("psw")
-	isEnc := (psw != "")
 
-	if isEnc {
+	if psw != "" {
 		file, err = filecrypto.EncryptFile(file, psw)
 		if err != nil {
 			return "", err
